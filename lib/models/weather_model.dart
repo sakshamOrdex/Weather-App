@@ -7,6 +7,7 @@ class Weather {
   final double windSpeed;
   final int sunrise;
   final int sunset;
+  final int timezone;
 
   Weather({
     required this.cityName,
@@ -17,6 +18,7 @@ class Weather {
     required this.windSpeed,
     required this.sunrise,
     required this.sunset,
+    required this.timezone
   });
 
   factory Weather.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class Weather {
       windSpeed: (json['wind']['speed'] as num).toDouble(),
       sunrise: (json['sys']['sunrise'] as num).toInt(),
       sunset: (json['sys']['sunset'] as num).toInt(),
+      timezone: (json['timezone'] as num).toInt()
     );
   }
 }
